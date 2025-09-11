@@ -1,3 +1,4 @@
+import Logos06Page from "@/components/logos-06/logos-06";
 import { CallToAction } from "@/components/ui/CallToAction";
 import FeatureDivider from "@/components/ui/FeatureDivider";
 import Features from "@/components/ui/Features";
@@ -11,6 +12,9 @@ export default function Home() {
     <main className="relative mx-auto flex flex-col">
       <div className="pt-56">
         <Hero />
+      </div>
+      <div className="pt-12">
+        <Logos06Page />
       </div>
       <div className="mt-52 px-4 xl:px-0">
         <Features />

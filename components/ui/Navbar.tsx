@@ -28,17 +28,21 @@ export function NavBar() {
           </Link>
           <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
             <div className="flex items-center gap-10 font-medium">
-              <Button asChild variant="default" className="cursor-pointer">
-                <Link className="px-2 py-1 text-sm text-gray-900" href="#referenzen">
+              <Button asChild variant="ghost" className="cursor-pointer">
+                <Link className="px-2 py-1 text-sm text-gray-900" href="#nzen">
                   Referenzen
                 </Link>
               </Button>
-              <Link className="px-2 py-1 text-sm text-gray-900" href="#leistung">
-                Leistung
-              </Link>
-              <Link className="px-2 py-1 text-sm text-gray-900" href="#agentur">
-                Agentur
-              </Link>
+              <Button asChild variant="ghost" className="cursor-pointer">
+                <Link className="px-2 py-1 text-sm text-gray-900" href="#leistung">
+                  Leistung
+                </Link>
+              </Button>
+              <Button asChild variant="ghost" className="cursor-pointer">
+                <Link className="px-2 py-1 text-sm text-gray-900" href="#agentur">
+                  Agentur
+                </Link>
+              </Button>
             </div>
           </nav>
           <Button variant="secondary" className="hidden h-10 cursor-pointer rounded-xl font-semibold sm:block">
