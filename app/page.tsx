@@ -6,17 +6,18 @@ import { Hero } from "@/components/ui/Hero";
 import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
 import Testimonial from "@/components/ui/Testimonial";
+import Features05Page from "@/components/features-05/features-05";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
-      <div className="pt-56">
-        <Hero />
+      <Hero className="pt-10 h-screen " />
+
+      <div>
+        <Features05Page />
       </div>
-      <div className="pt-12">
-        <Logos06Page />
-      </div>
-      <div className="mt-52 px-4 xl:px-0">
+
+      <div className=" px-4 xl:px-0">
         <Features />
       </div>
       <div className="mt-32 px-4 xl:px-0">

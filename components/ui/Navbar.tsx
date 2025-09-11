@@ -16,8 +16,8 @@ export function NavBar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-4 top-4 z-50 mx-auto flex w-screen max-w-6xl justify-center rounded-lg border border-transparent px-3 py-3 transition-all duration-300",
-        scrolled || open ? "w-[900px] rounded-2xl border-gray-200/50 bg-white/50 shadow-2xl shadow-black/5 backdrop-blur-sm" : "bg-white/0"
+        "fixed inset-x-4 top-4 z-50 mx-auto flex w-screen max-w-6xl justify-center rounded-lg border border-transparent px-3 py-3 transition-all duration-300 ",
+        scrolled || open ? "w-[900px] rounded-2xl border-gray-200/50 bg-white/50 shadow-2xl shadow-black/5 backdrop-blur-sm" : "bg-white/50 backdrop-blur-sm"
       )}>
       <div className="w-full md:my-auto">
         <div className="relative flex items-center justify-between">

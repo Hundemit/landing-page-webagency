@@ -61,6 +61,7 @@ export default function Features() {
           </svg>
         </div>
       </div>
+
       <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-0">
         {/* Content */}
         <div className="col-span-2 my-auto px-2">
