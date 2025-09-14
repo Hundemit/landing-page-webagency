@@ -25,7 +25,7 @@ const GameOfLife = () => {
           .fill(null)
           .map(() => ({
             alive: Math.random() > 0.85,
-            opacity: Math.random() > 0.85 ? 0.5 : 0,
+            opacity: Math.random() > 0.85 ? 1 : 0,
           }))
       );
 
@@ -57,7 +57,7 @@ const GameOfLife = () => {
           }
 
           if (cell.opacity > 0) {
-            ctx.fillStyle = `rgba(0, 0, 0, ${cell.opacity})`;
+            ctx.fillStyle = `rgba(151, 199, 123, ${cell.opacity})`;
             ctx.beginPath();
             ctx.arc(j * cellSize + cellSize / 2, i * cellSize + cellSize / 2, 1, 0, Math.PI * 2);
             ctx.fill();

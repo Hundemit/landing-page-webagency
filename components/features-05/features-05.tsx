@@ -36,9 +36,11 @@ const features = [
 
 const Features05Page = () => {
   return (
-    <div className="max-w-(--breakpoint-lg) w-full py-10 px-6 mx-auto">
+    <div className="max-w-(--breakpoint-lg) w-full px-6 mx-auto">
       <h2 className="text-4xl md:text-[2.5rem] md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty">Unsere Leistungen</h2>
-      <p className="mt-2 text-muted-foreground text-lg sm:text-xl">Professionelle digitale Lösungen für Ihr Unternehmen - von der Strategie bis zur Umsetzung.</p>
+      <p className="mt-2 text-muted-foreground text-lg sm:text-xl">
+        Vom Konzept bis zur Markteinführung bieten wir umfassende digitale Lösungen, die Ihrem Unternehmen helfen, in der digitalen Landschaft erfolgreich zu sein.
+      </p>
       <div className="mt-10 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {features.map((feature) => (
           <Card key={feature.title} className="flex flex-col border rounded-xl overflow-hidden shadow-none sm:pb-0">

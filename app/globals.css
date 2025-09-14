@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @import "./theme.css";
+@import "./stylesheet.css";
 
 @layer base {
   * {
@@ -11,6 +12,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "BlinkMacSystemFont", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   }
 }
 
@@ -38,16 +40,16 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
-  --animate-shine: shine var(--duration) infinite linear
-;
+  --animate-shine: shine var(--duration) infinite linear;
   @keyframes shine {
-  0% {
-    background-position: 0% 0%;
+    0% {
+      background-position: 0% 0%;
     }
-  50% {
-    background-position: 100% 100%;
+    50% {
+      background-position: 100% 100%;
     }
-  to {
-    background-position: 0% 0%;
+    to {
+      background-position: 0% 0%;
     }
-  }}
+  }
+}

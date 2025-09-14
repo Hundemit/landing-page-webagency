@@ -7,32 +7,40 @@ import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
 import Testimonial from "@/components/ui/Testimonial";
 import Features05Page from "@/components/features-05/features-05";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
       <Hero className="pt-10 h-screen " />
 
-      <div>
-        <Features05Page />
-      </div>
-
-      <div className=" px-4 xl:px-0">
+      <div className=" pt-32 px-4 xl:px-0">
         <Features />
       </div>
-      <div className="mt-32 px-4 xl:px-0">
-        <Testimonial />
+
+      <FeatureDivider className="mb-16 mt-32 max-w-6xl" />
+
+      <div className=" px-4 xl:px-0">
+        <Features05Page />
       </div>
-      <FeatureDivider className="my-16 max-w-6xl" />
+      {/* <FeatureDivider className="my-64 max-w-6xl" />
+
+      <div className=" px-4 xl:px-0">
+        <Testimonial />
+      </div> */}
+      <FeatureDivider className="my-64 max-w-6xl" />
       <div className="px-4 xl:px-0">
         <Map />
       </div>
-      <FeatureDivider className="my-16 max-w-6xl" />
+      <FeatureDivider className="my-64 max-w-6xl" />
       <div className="mt-12 mb-40 px-4 xl:px-0">
         <SolarAnalytics />
       </div>
       <div className="mt-10 mb-40 px-4 xl:px-0">
         <CallToAction />
+      </div>
+      <div className="mt-10 mb-40 px-4 xl:px-0">
+        <Footer />
       </div>
     </main>
   );

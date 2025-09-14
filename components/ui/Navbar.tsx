@@ -28,24 +28,24 @@ export function NavBar() {
           </Link>
           <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
             <div className="flex items-center gap-10 font-medium">
-              <Button asChild variant="ghost" className="cursor-pointer">
-                <Link className="px-2 py-1 text-sm text-gray-900" href="#nzen">
+              <Button asChild variant="ghost" className="cursor-pointer text-base">
+                <Link className="px-2 py-1 " href="#nzen">
                   Referenzen
                 </Link>
               </Button>
-              <Button asChild variant="ghost" className="cursor-pointer">
-                <Link className="px-2 py-1 text-sm text-gray-900" href="#leistung">
+              <Button asChild variant="ghost" className="cursor-pointer text-base">
+                <Link className="px-2 py-1 " href="#leistung">
                   Leistung
                 </Link>
               </Button>
-              <Button asChild variant="ghost" className="cursor-pointer">
-                <Link className="px-2 py-1 text-sm text-gray-900" href="#agentur">
+              <Button asChild variant="ghost" className="cursor-pointer text-base">
+                <Link className="px-2 py-1 " href="#agentur">
                   Agentur
                 </Link>
               </Button>
             </div>
           </nav>
-          <Button variant="secondary" className="hidden h-10 cursor-pointer rounded-xl font-semibold sm:block">
+          <Button variant="secondary" className="hidden h-10 cursor-pointer rounded-xl text-base font-semibold sm:block">
             Kontakt
           </Button>
           <Button onClick={() => setOpen(!open)} variant="secondary" className="p-1.5 sm:hidden" aria-label={open ? "CloseNavigation Menu" : "Open Navigation Menu"}>

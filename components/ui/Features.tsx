@@ -74,14 +74,9 @@ export default function Features() {
             Deploy intelligent monitoring and automated response systems across your fields, irrigation networks, and aerial operations with our integrated platform.
           </p>
         </div>
+
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
-          <svg
-            className="absolute size-full [mask-image:linear-gradient(transparent,white_10rem)]"
-            // style={{
-            //   maskImage:
-            //     "linear-gradient(transparent, white 20rem, white calc(100% - 20rem), transparent)",
-            // }}
-          >
+          <svg className="absolute size-full [mask-image:linear-gradient(transparent,white_10rem)]">
             <defs>
               <pattern id="diagonal-feature-pattern" patternUnits="userSpaceOnUse" width="64" height="64">
                 {Array.from({ length: 17 }, (_, i) => {
@@ -185,17 +180,6 @@ export default function Features() {
           </div>
         </div>
 
-        <div className="col-span-2 my-auto px-2">
-          <h2 className="relative text-lg font-semibold tracking-tight text-orange-500">
-            Precision Agriculture
-            <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-orange-500" />
-          </h2>
-          <p className="mt-2 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">Turn every acre into a data-driven powerhouse</p>
-          <p className="mt-4 text-balance text-gray-700">
-            Revolutionize your farming operation with edge-computing AI that transforms raw field data into actionable insights in real-time. Make informed decisions faster, reduce resource waste, and
-            maximize yields.
-          </p>
-        </div>
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">
           <svg className="absolute size-full">
             <defs>
@@ -278,6 +262,19 @@ export default function Features() {
             </div>
           </div>
         </div>
+
+        <div className="col-span-2 my-auto px-2">
+          <h2 className="relative text-lg font-semibold tracking-tight text-orange-500">
+            Precision Agriculture
+            <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-orange-500" />
+          </h2>
+          <p className="mt-2 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">Turn every acre into a data-driven powerhouse</p>
+          <p className="mt-4 text-balance text-gray-700">
+            Revolutionize your farming operation with edge-computing AI that transforms raw field data into actionable insights in real-time. Make informed decisions faster, reduce resource waste, and
+            maximize yields.
+          </p>
+        </div>
+
         <div className="col-span-2 my-auto px-2">
           <h2 className="relative text-lg font-semibold tracking-tight text-orange-500">
             Easy Expansion
