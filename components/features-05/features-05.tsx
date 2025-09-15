@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Lightbulb, Monitor, ShoppingCart, Megaphone, Search, Palette, Zap, FolderSync, Users, Goal, BookCheck, ChartPie } from "lucide-react";
+import { Zap, FolderSync, Users, Goal, BookCheck, ChartPie } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -34,9 +35,9 @@ const features = [
   },
 ];
 
-const Features05Page = () => {
+const Features05Page = ({ className }: { className?: string }) => {
   return (
-    <div className="max-w-(--breakpoint-lg) w-full px-6 mx-auto">
+    <div className={cn(" w-full mx-auto", className)}>
       <h2 className="text-4xl md:text-[2.5rem] md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty">Unsere Leistungen</h2>
       <p className="mt-2 text-muted-foreground text-lg sm:text-xl">
         Vom Konzept bis zur Markteinführung bieten wir umfassende digitale Lösungen, die Ihrem Unternehmen helfen, in der digitalen Landschaft erfolgreich zu sein.

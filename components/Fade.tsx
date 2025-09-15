@@ -53,14 +53,14 @@ function FadeSection({ children, className }: React.HTMLProps<HTMLDivElement>) {
 
 function FadeDiv({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <motion.div variants={item} initial="hidden" whileInView="show" className={className}>
+    <motion.div variants={item} initial="hidden" animate="show" className={className}>
       {children}
     </motion.div>
   );
 }
 function FadeSpan({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <motion.span variants={item} initial="hidden" whileInView="show" className={className}>
+    <motion.span variants={item} initial="hidden" animate="show" className={className}>
       {children}
     </motion.span>
   );

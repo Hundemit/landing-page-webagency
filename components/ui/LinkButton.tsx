@@ -6,6 +6,7 @@ type LinkButtonProps = {
   href: string;
   className?: string;
   variant?: "light" | "dark";
+  hoverText?: string;
 };
 
 const variantClasses = {
@@ -27,11 +28,11 @@ const variantClasses = {
   },
 };
 
-export function LinkButton({ text, href, className, variant = "light" }: LinkButtonProps) {
+export function LinkButton({ text, href, className, variant = "light", hoverText = text }: LinkButtonProps) {
   const { button, text: textColor, iconWrapper, hoverBar, icon, textHover } = variantClasses[variant];
 
   return (
-    <button className={cn("group inline-flex items-center justify-center gap-2 p-1.5 rounded-xl w-48 relative cursor-pointer", button, className)}>
+    <button className={cn("group focus-visible:scale-105 inline-flex items-center justify-center gap-2 p-1.5 rounded-xl min-w-48 relative cursor-pointer", button, className)}>
       <div className="w-full relative overflow-hidden z-10 group">
         <p
           className={cn(
@@ -45,7 +46,7 @@ export function LinkButton({ text, href, className, variant = "light" }: LinkBut
             "absolute top-0 left-0 w-full text-base text-center mx-auto font-semibold z-10 text-foreground duration-300 transition-all ease-in-out [transform:translate3d(0px,22px,0px)] group-hover:[transform:translate3d(0px,0px,0px)]",
             textHover
           )}>
-          {text}
+          {hoverText}
         </span>
       </div>
 

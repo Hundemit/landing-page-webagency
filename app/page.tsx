@@ -15,13 +15,11 @@ export default function Home() {
       {/* space for the navbar */}
       <div className="h-32"></div>
 
-      <AboutUs />
+      <AboutUs className="px-4 xl:px-0" />
 
       <FeatureDivider className="mb-16 mt-32 max-w-6xl" />
 
-      <div className=" px-4 xl:px-0">
-        <Features05Page />
-      </div>
+      <Features05Page className="px-4 xl:px-0 max-w-(--breakpoint-lg)" />
       {/* <FeatureDivider className="my-64 max-w-6xl" />
 
       <div className=" px-4 xl:px-0">
