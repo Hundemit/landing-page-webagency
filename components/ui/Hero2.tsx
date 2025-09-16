@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export function Hero2({ className }: { className?: string }) {
   return (
-    <section aria-label="hero" className={cn("relative flex flex-col items-center   h-screen min-h-[424px] pt-22 md:pt-32 duration-300 ", className)}>
+    <section aria-label="hero" className={cn("relative flex flex-col items-center min-h-[617px] sm:min-h-[672px]  h-screen  pt-22 md:pt-32 duration-300 ", className)}>
       <div className="flex flex-col sm:flex-row justify-between w-full max-w-7xl items-end px-4  h-fit sm:min-h-[424px] min-h-[409px]">
         {/* left side */}
         <div className="space-y-4 mb-8 md:mb-32">
@@ -34,7 +34,7 @@ export function Hero2({ className }: { className?: string }) {
       </div>
 
       {/* Img Section */}
-      <div className=" px-4 pb-4 w-full h-full overflow-hidden min-h-[150px] ">
+      <div className=" px-4 pb-4 w-full h-full overflow-hidden min-h-[120px] ">
         <img src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp" alt="hero2" className="w-full h-full object-cover rounded-md" />
       </div>
     </section>
