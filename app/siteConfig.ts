@@ -4,5 +4,8 @@ export const siteConfig = {
   description: "Automation for every Farm.",
   baseLinks: {
     home: "/",
+    about: "/agentur",
+    pricing: "/leistungen",
+    changelog: "/referenzen",
   },
 };

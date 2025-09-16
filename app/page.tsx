@@ -5,7 +5,6 @@ import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
 import Features05Page from "@/components/features-05/features-05";
 import Footer from "@/components/ui/Footer";
-import { AboutUs } from "@/components/ui/about-us";
 
 export default function Home() {
   return (

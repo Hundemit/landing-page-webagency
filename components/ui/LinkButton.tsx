@@ -32,7 +32,7 @@ export function LinkButton({ text, className, variant = "light", hoverText = tex
   const { button, text: textColor, iconWrapper, hoverBar, icon, textHover } = variantClasses[variant];
 
   return (
-    <button className={cn("group focus-visible:scale-105 inline-flex items-center justify-center gap-2 p-1.5 rounded-xl min-w-48 relative cursor-pointer", button, className)}>
+    <a href={href} className={cn("group focus-visible:scale-105 inline-flex items-center justify-center gap-2 p-1.5 rounded-xl min-w-48 relative cursor-pointer", button, className)}>
       <div className="w-full relative overflow-hidden z-10 group">
         <p
           className={cn(
@@ -64,6 +64,6 @@ export function LinkButton({ text, className, variant = "light", hoverText = tex
           "absolute h-11 right-1.5 rounded-lg group-hover:w-[calc(100%-12px)] w-11 will-change-transform duration-300 transition-all ease-in-out flex justify-start items-end",
           hoverBar
         )}></div>
-    </button>
+    </a>
   );
 }
