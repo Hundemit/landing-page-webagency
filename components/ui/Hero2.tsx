@@ -34,7 +34,7 @@ export function Hero2({ className }: { className?: string }) {
       </div>
 
       {/* Img Section */}
-      <div className=" px-4 pb-4 w-full h-full overflow-hidden min-h-[200px] ">
+      <div className=" px-4 pb-4 w-full h-full overflow-hidden min-h-[150px] ">
         <img src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp" alt="hero2" className="w-full h-full object-cover rounded-md" />
       </div>
     </section>
