@@ -27,15 +27,15 @@ export function Hero2({ className }: { className?: string }) {
         </div>
 
         {/* right side */}
-        <div className=" w-3/5  sm:w-72 rounded-xl overflow-hidden -mb-12 md:-mb-18   z-10 duration-300  shadow-xl">
-          <div className="w-full h-32 md:h-64 bg-gray-700 duration-300"></div>
-          <div className="w-full h-12 md:h-18 bg-primary duration-300"></div>
+        <div className=" w-3/5  sm:w-72 rounded-xl overflow-hidden -mb-12 md:-mb-18   z-10 duration-300  shadow-xl mr-4">
+          <div className="w-full h-32 md:h-64 bg-primary/10 duration-300"></div>
+          <div className="w-full h-12 md:h-18 bg-primary/50 duration-300"></div>
         </div>
       </div>
 
       {/* Img Section */}
-      <div className="bg-red-300 w-full h-full overflow-hidden min-h-[200px] bg-[url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp')] bg-cover bg-center">
-        {/* <img src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp" alt="hero2" className="" /> */}
+      <div className=" px-4 pb-4 w-full h-full overflow-hidden min-h-[200px] ">
+        <img src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp" alt="hero2" className="w-full h-full object-cover rounded-md" />
       </div>
     </section>
   );
