@@ -28,7 +28,7 @@ const variantClasses = {
   },
 };
 
-export function LinkButton({ text, href, className, variant = "light", hoverText = text }: LinkButtonProps) {
+export function LinkButton({ text, className, variant = "light", hoverText = text, href }: LinkButtonProps) {
   const { button, text: textColor, iconWrapper, hoverBar, icon, textHover } = variantClasses[variant];
 
   return (

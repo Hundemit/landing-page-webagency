@@ -1,10 +1,9 @@
 "use client";
-import { MotionValue, motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 import { FC, ReactNode, useRef } from "react";
 import { LinkButton } from "./LinkButton";
 import { useIsMobile } from "@/lib/useMobile";
 import { cn } from "@/lib/utils";
-import { Card } from "./card";
 
 export const AboutUs = ({ className }: { className?: string }) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -69,7 +68,7 @@ export const AboutUs = ({ className }: { className?: string }) => {
     <>
       {/* <div className="h-[50vh] fixed top-0 left-0 right-0 bg-red-500"></div> */}
 
-      <section className={cn(" max-w-7xl w-full duration-500 mx-auto px-4 xl:px-0 flex flex-col sm:flex-row  justify-between min-h-screen h-[3000px] ", className)}>
+      <section className={cn(" max-w-7xl w-full duration-500 mx-auto px-4 xl:px-0 flex flex-col sm:flex-row  justify-between min-h-screen h-[2000px] ", className)}>
         {/* Left Side */}
         <div className="sm:flex items-center gap-2 h-fit hidden sm:sticky top-1/4 left-0">
           <hr className="w-8  border-primary" />

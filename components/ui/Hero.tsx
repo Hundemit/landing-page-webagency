@@ -1,5 +1,5 @@
 import { RiArrowRightUpLine } from "@remixicon/react";
-import { FadeDiv, FadeSection, FadeSpan } from "@/components/Fade";
+import { FadeDiv, FadeSpan } from "@/components/Fade";
 
 import GameOfLife from "./HeroBackground";
 import { cn } from "@/lib/utils";
