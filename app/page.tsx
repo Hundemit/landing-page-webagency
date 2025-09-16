@@ -5,6 +5,7 @@ import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
 import Features05Page from "@/components/features-05/features-05";
 import Footer from "@/components/ui/Footer";
+import { AboutUs } from "@/components/ui/about-us";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       {/* space for the navbar */}
       <div className="h-32"></div>
 
-      {/* <AboutUs className="px-4 xl:px-0" /> */}
+      <AboutUs className="px-4 xl:px-0" />
 
       <FeatureDivider className="mb-16 mt-32 max-w-6xl" />
 
