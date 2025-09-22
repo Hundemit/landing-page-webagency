@@ -16,6 +16,23 @@
   }
 }
 
+/* ScrollSmoother Styles */
+#smooth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#smooth-content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .mask {
   mask-image: radial-gradient(rgba(0, 0, 0, 1) 0%, transparent 80%);
 }
