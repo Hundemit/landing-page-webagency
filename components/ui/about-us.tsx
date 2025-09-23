@@ -1,7 +1,6 @@
 "use client";
 import { FC, ReactNode, useRef, useEffect } from "react";
 import { LinkButton } from "./LinkButton";
-import { useIsMobile } from "@/lib/useMobile";
 import { cn } from "@/lib/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -250,7 +249,7 @@ export const AboutUs = ({ className }: { className?: string }) => {
           </div>
 
           {/* test section */}
-          <div id="target2" ref={targetRef2} className="mt-10 flex w-full sm:flex-row gap-5 flex-col gap-0 justify-center  items-end h-[650px] ">
+          <div id="target2" ref={targetRef2} className="mt-10 flex w-full sm:flex-row gap-5 flex-col  justify-center  items-end h-[650px] ">
             <div ref={leftCardRef} className="w-full h-96 max-w-sm  bg-card flex flex-col justify-between p-7 rounded-xl will-change-transform" style={{ transform: "translateY(-25%)" }}>
               <h4 className="text-[28px] font-semibold"> Our Vision</h4>
               <p className="text-lg mx-1 my-5 ">

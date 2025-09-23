@@ -1,14 +1,14 @@
 import { CallToAction } from "@/components/ui/CallToAction";
 import FeatureDivider from "@/components/ui/FeatureDivider";
-import { Hero } from "@/components/ui/Hero";
 import { Hero2 } from "@/components/ui/Hero2";
 
 import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
-import Features05Page from "@/components/features-05/features-05";
+import FeaturesPage from "@/components/features-05/features";
 import Footer from "@/components/ui/Footer";
 import { AboutUs } from "@/components/ui/about-us";
 import LogosMarquee from "@/components/LogosMarquee/logos-marquee";
+import FeaturesPage2 from "@/components/features-05/features2";
 
 export default function Home() {
   return (
@@ -21,11 +21,12 @@ export default function Home() {
       {/* space for the navbar */}
       <div className="h-32"></div>
 
-      <AboutUs className="px-4 xl:px-0 " />
+      <AboutUs className="px-4 xl:px-0 mb-48" />
 
-      <FeatureDivider className="mb-16 mt-32 max-w-7xl " />
+      {/* <FeatureDivider className="mb-16 mt-32 max-w-7xl " /> */}
 
-      <Features05Page className="px-4 xl:px-0 w-full max-w-7xl " />
+      {/* <FeaturesPage className="px-4 xl:px-0 w-full  " /> */}
+      <FeaturesPage2 className="px-4 xl:px-0 my-38 " />
 
       <FeatureDivider className="my-64 max-w-6xl" />
       <div className="px-4 xl:px-0">
