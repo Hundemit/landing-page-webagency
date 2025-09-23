@@ -21,12 +21,12 @@ export default function Home() {
       {/* space for the navbar */}
       <div className="h-32"></div>
 
-      <AboutUs className="px-4 xl:px-0 mb-48" />
+      <AboutUs className="px-4 xl:px-0 sm:mb-48 mb-16" />
 
       {/* <FeatureDivider className="mb-16 mt-32 max-w-7xl " /> */}
 
       {/* <FeaturesPage className="px-4 xl:px-0 w-full  " /> */}
-      <FeaturesPage2 className="px-4 xl:px-0 my-38 " />
+      <FeaturesPage2 className="px-4 sm:px-0 sm:my-38  " />
 
       <FeatureDivider className="my-64 max-w-6xl" />
       <div className="px-4 xl:px-0">

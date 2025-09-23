@@ -50,17 +50,53 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (cardRef.current) {
+    const mm = gsap.matchMedia();
+
+    // Reduced motion preference
+    mm.add("(prefers-reduced-motion: reduce)", () => {
       gsap.to(cardRef.current, {
         y: "0px",
+        duration: 0.3,
+        ease: "none",
         scrollTrigger: {
           trigger: targetRef.current,
-          start: "top 80%",
-          end: "bottom bottom",
-          scrub: 1,
+          start: "top 90%",
+          end: "bottom 95%",
+          scrub: false,
+          toggleActions: "play none none reverse",
         },
       });
-    }
+    });
+
+    // Mobile devices (up to 768px)
+    mm.add("(max-width: 768px)", () => {
+      gsap.to(cardRef.current, {
+        y: "0px",
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: targetRef.current,
+          start: "top 90%",
+          end: "bottom bottom",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+
+    // Desktop devices (769px and up)
+    mm.add("(min-width: 769px)", () => {
+      gsap.to(cardRef.current, {
+        y: "0px",
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: targetRef.current,
+          start: "top 75%",
+          end: "bottom bottom",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -68,12 +104,12 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
   }, []);
 
   return (
-    <div ref={targetRef} className={cn("w-full container duration-300 mx-auto flex-col min-h-fit justify-center h-[100vh]", className)}>
-      <div ref={cardRef} style={{ transform: "translateY(50%)" }} className="sticky top-48 mx-auto bg-primary-foreground p-12 rounded-xl will-change-transform">
-        <h2 className="text-5xl font-bold text-pretty text-background">Unsere Services.</h2>
-        <div className="mt-10 sm:mt-16 grid lg:grid-cols-3 gap-8  mx-auto">
+    <section ref={targetRef} className={cn("w-full container duration-300 mx-auto  flex-col !min-h-fit justify-center sm:h-[1500px] ", className)}>
+      <div ref={cardRef} style={{ transform: "translateY(100%)" }} className="sticky top-[10%] w-full bg-primary-foreground sm:p-10 p-6 rounded-xl will-change-transform">
+        <h2 className="sm:text-5xl text-4xl font-bold text-pretty text-background mb-10 md:mb-16 sm:px-6">Unsere Services.</h2>
+        <div className="grid lg:grid-cols-3 sm:gap-8 gap-16   mx-auto">
           {serviceData.map((feature) => (
-            <div key={feature.title} className="flex flex-col gap-6 rounded-xl  hover:bg-[#073d25] hover:scale-105 transition-all duration-300 p-6 cursor-pointer">
+            <div key={feature.title} className="flex flex-col gap-6 rounded-xl  hover:bg-[#073d25] hover:scale-105 transition-all duration-300 sm:p-6 p-0 cursor-pointer">
               <feature.icon className="size-8 text-background" />
               <span className="font-bold text-background text-2xl">{feature.title}</span>
               <p className="mt-1 text-background/80 text-base"> {feature.description} </p>
@@ -82,7 +118,7 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
