@@ -89,7 +89,7 @@ export function LinkButton({ text, className, variant = "light", hoverText = tex
         </div>
       </div>
 
-      <div className={cn("absolute will-change-transform duration-300 transition-all ease-in-out flex justify-start items-end", hoverBar, hoverBarSize, className)}></div>
+      <div className={cn("absolute will-change-transform duration-300 transition-all ease-in-out flex justify-start items-end", hoverBar, hoverBarSize)}></div>
     </a>
   );
 }

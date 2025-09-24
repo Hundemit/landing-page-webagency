@@ -176,8 +176,8 @@ export const AboutUs = ({ className }: { className?: string }) => {
       <section className={cn("w-full duration-500 mx-auto px-4 xl:px-0 flex flex-col sm:hidden  justify-between ", className)}>
         <div className="w-full lg:max-w-3xl flex flex-col justify-between ">
           <div>
-            <div className="flex items-center gap-2 h-fit">
-              <hr className="w-8 border-primary" />
+            <div className="flex items-center gap-2 h-fit mb-4">
+              <hr className="w-8 border-primary-foreground" />
               <h2 className="text-lg font-medium">Über uns Mobile</h2>
             </div>
             <h1 className={"flex flex-wrap text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl "}>
@@ -192,15 +192,15 @@ export const AboutUs = ({ className }: { className?: string }) => {
 
           {/* test section */}
           <div className="mt-10 flex-col flex w-full gap-10 items-center">
-            <div className="h-96  bg-card flex flex-col justify-between p-7 rounded-xl will-change-transform w-full">
+            <div className="sm:h-96  bg-card flex flex-col justify-between gap-4 p-4 sm:p-7 rounded-xl will-change-transform w-full">
               <h4 className="text-[28px]  font-semibold"> Our Vision</h4>
-              <p className="text-lg my-5 ">
+              <p className="text-lg ">
                 To shape a digital world where design meets purpose where every pixel serves a goal, every interaction feels effortless, and every brand gets the digital presence it truly deserves.
               </p>
             </div>
-            <div className=" h-96  bg-card flex flex-col justify-between p-7 rounded-xl ">
+            <div className="sm:h-96  bg-card flex flex-col justify-between gap-4 p-4 sm:p-7 rounded-xl will-change-transform w-full">
               <h4 className="text-[28px] font-semibold"> Our Mission</h4>
-              <p className="text-lg my-5 ">
+              <p className="text-lg ">
                 To shape a digital world where design meets purpose where every pixel serves a goal, every interaction feels effortless, and every brand gets the digital presence it truly deserves.
               </p>
             </div>

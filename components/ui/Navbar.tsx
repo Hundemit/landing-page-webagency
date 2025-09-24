@@ -18,7 +18,7 @@ export function NavBar() {
       className={cn(
         "fixed inset-x-3 top-0   z-50 mx-auto backdrop-blur-sm flex max-w-7xl transform-gpu animate-slide-down-fade justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
         open === true ? "h-52" : "h-16",
-        scrolled || open === true ? " max-w-3xl border-gray-100 bg-white/80 shadow-md shadow-gray-200 dark:border-white/15 dark:bg-black/70  top-4" : "bg-white/0 dark:bg-gray-950/0"
+        scrolled || open === true ? " max-w-3xl border-gray-100/10 bg-white/20 shadow-md shadow-gray-200 dark:border-white/15 dark:bg-black/70  top-4" : "bg-white/0 dark:bg-gray-950/0"
       )}>
       <div className="w-full md:my-auto">
         <div className="relative flex items-center justify-between">
@@ -49,7 +49,11 @@ export function NavBar() {
           <Button variant="secondary" className="hidden h-10 cursor-pointer rounded-xl text-base font-semibold sm:block">
             Kontakt
           </Button>
-          <Button onClick={() => setOpen(!open)} variant="secondary" className="p-1.5 sm:hidden" aria-label={open ? "CloseNavigation Menu" : "Open Navigation Menu"}>
+          <Button
+            onClick={() => setOpen(!open)}
+            variant="ghost"
+            className="p-1.5 sm:hidden bg-white/20 backdrop-blur-sm shadow-xs shadow-gray-200"
+            aria-label={open ? "CloseNavigation Menu" : "Open Navigation Menu"}>
             {!open ? <RiMenuFill className="size-6 shrink-0 text-gray-900" aria-hidden /> : <RiCloseFill className="size-6 shrink-0 text-gray-900" aria-hidden />}
           </Button>
         </div>

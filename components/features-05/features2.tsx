@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import { Goal, BookCheck, ChartPie, Users, FolderSync, Zap } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { RiArrowRightUpLine } from "@remixicon/react";
+import ServiceCard from "../ui/ServiceCard";
 
 const FeaturesPage2 = ({ className }: { className?: string }) => {
   const serviceData = [
@@ -52,46 +54,21 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    // Reduced motion preference
-    mm.add("(prefers-reduced-motion: reduce)", () => {
+    // Desktop devices (769px and up)
+    mm.add("(min-width: 769px)", () => {
+      // Set initial state
+      gsap.set(cardRef.current, {
+        y: "200%",
+      });
+
+      // Animate to final state
       gsap.to(cardRef.current, {
         y: "0px",
         duration: 0.3,
-        ease: "none",
-        scrollTrigger: {
-          trigger: targetRef.current,
-          start: "top 90%",
-          end: "bottom 95%",
-          scrub: false,
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    // Mobile devices (up to 768px)
-    mm.add("(max-width: 768px)", () => {
-      gsap.to(cardRef.current, {
-        y: "0px",
-        duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: targetRef.current,
-          start: "top 90%",
-          end: "bottom bottom",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    // Desktop devices (769px and up)
-    mm.add("(min-width: 769px)", () => {
-      gsap.to(cardRef.current, {
-        y: "0px",
-        duration: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: targetRef.current,
-          start: "top 75%",
+          start: "top 50%",
           end: "bottom bottom",
           toggleActions: "play none none reverse",
         },
@@ -104,21 +81,94 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
   }, []);
 
   return (
-    <section ref={targetRef} className={cn("w-full container duration-300 mx-auto  flex-col !min-h-fit justify-center sm:h-[1500px] ", className)}>
-      <div ref={cardRef} style={{ transform: "translateY(100%)" }} className="sticky top-[10%] w-full bg-primary-foreground sm:p-10 p-6 rounded-xl will-change-transform">
-        <h2 className="sm:text-5xl text-4xl font-bold text-pretty text-background mb-10 md:mb-16 sm:px-6">Unsere Services.</h2>
-        <div className="grid lg:grid-cols-3 sm:gap-8 gap-16   mx-auto">
-          {serviceData.map((feature) => (
-            <div key={feature.title} className="flex flex-col gap-6 rounded-xl  hover:bg-[#073d25] hover:scale-105 transition-all duration-300 sm:p-6 p-0 cursor-pointer">
-              <feature.icon className="size-8 text-background" />
-              <span className="font-bold text-background text-2xl">{feature.title}</span>
-              <p className="mt-1 text-background/80 text-base"> {feature.description} </p>
-              <p className="text-background text-base font-bold"> Mehr Infos </p>
+    <>
+      {/* <section ref={targetRef} className={cn("w-full max-w-7xl duration-300 mx-auto flex-col !min-h-fit sm:h-[1500px] hidden lg:flex mt-32 ", className)}>
+        <div ref={cardRef} className="flex flex-col gap-2 sticky top-[10%]">
+          <div className=" items-center gap-2 h-fit flex max-w-7xl mx-auto w-full">
+            <hr className="w-8  border-primary" />
+            <h2 className="sm:text-lg text-base font-medium ">Unsere Services.</h2>
+          </div>
+          <h2 className="sm:text-5xl text-4xl font-bold text-pretty mb-4 text-center lg:text-left ">We turn bold ideas into smart digital experiences.</h2>
+
+          <div className=" w-full bg-primary-foreground sm:p-10 p-4 duration-300  rounded-xl will-change-transform">
+            <div className="grid lg:grid-cols-3 lg:gap-8 gap-16 mx-auto duration-300">
+              {serviceData.map((feature) => (
+                // desktop cards
+                <div key={feature.title} className="flex flex-col lg:gap-6 gap-4 rounded-xl p-4  hover:bg-[#073d25] hover:scale-105 transition-all duration-300   cursor-pointer">
+                  <feature.icon className="lg:size-8 size-6 text-background " />
+                  <div className="flex flex-col gap-2">
+                    <span className="font-bold text-background  text-2xl">{feature.title}</span>
+                    <p className="mt-1 text-background/80  text-base"> {feature.description} </p>
+                  </div>
+
+                  <div className="flex gap-2 items-center">
+                    <p className=" text-background text-base font-bold"> Mehr Infos </p>
+                    <RiArrowRightUpLine className="size-5 text-background" />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section> */}
+
+      <section ref={targetRef} className={cn("w-full max-w-7xl duration-300 mx-auto flex-col !min-h-fit sm:h-[1500px] hidden lg:flex mt-32 ", className)}>
+        <div ref={cardRef} className="flex flex-col gap-2 sticky top-[10%]">
+          <div className=" items-center gap-2 h-fit flex max-w-7xl mx-auto w-full">
+            <hr className="w-8  border-primary" />
+            <h2 className="sm:text-lg text-base font-medium ">Unsere Services.</h2>
+          </div>
+          <h2 className="sm:text-4xl text-4xl font-bold text-pretty mb-8 text-center lg:text-left ">We turn bold ideas into smart digital experiences.</h2>
+
+          <div className=" w-full  duration-300  rounded-xl will-change-transform">
+            <div className="grid lg:grid-cols-3 lg:gap-8 gap-16 mx-auto duration-300">
+              {serviceData.map((feature) => (
+                // desktop cards
+                <div key={feature.title} className="flex flex-col lg:gap-6 gap-4 rounded-xl p-4  hover:bg-[#073d25]/20 hover:scale-105 transition-all duration-300   cursor-pointer">
+                  <feature.icon className="lg:size-8 size-6  " />
+                  <div className="flex flex-col gap-2">
+                    <span className="font-bold  text-2xl">{feature.title}</span>
+                    <p className="mt-1  text-base"> {feature.description} </p>
+                  </div>
+
+                  <div className="flex gap-2 items-center">
+                    <p className="  text-base font-bold"> Mehr Infos </p>
+                    <RiArrowRightUpLine className="size-5 " />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={cn("w-full duration-300 mx-auto  flex-col !min-h-fit justify-center sm:h-[1500px] bg-primary-foreground py-24 lg:hidden", className)}>
+        <div className="sticky top-[10%] w-full sm:p-10  duration-300  rounded-xl will-change-transform">
+          <div className="sticky top-24">
+            <div className=" items-center gap-2 h-fit flex ">
+              <hr className="w-8  border-background" />
+              <h2 className="sm:text-lg text-base font-medium text-background">Unsere Services.</h2>
+            </div>
+            <h2 className="sm:text-5xl text-3xl font-bold text-pretty text-background mb-10">Wir verwandeln mutige Ideen in smarte digitale Erlebnisse.</h2>
+          </div>
+
+          <div className="gap-96 flex flex-col">
+            {serviceData.map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                badges={service.badges}
+                variant="default"
+                className="sticky border-2 border-green-900 h-[60svh]"
+                style={{ top: `${250 + index * 12}px` }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
