@@ -82,67 +82,41 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
 
   return (
     <>
-      {/* <section ref={targetRef} className={cn("w-full max-w-7xl duration-300 mx-auto flex-col !min-h-fit sm:h-[1500px] hidden lg:flex mt-32 ", className)}>
-        <div ref={cardRef} className="flex flex-col gap-2 sticky top-[10%]">
-          <div className=" items-center gap-2 h-fit flex max-w-7xl mx-auto w-full">
-            <hr className="w-8  border-primary" />
-            <h2 className="sm:text-lg text-base font-medium ">Unsere Services.</h2>
-          </div>
-          <h2 className="sm:text-5xl text-4xl font-bold text-pretty mb-4 text-center lg:text-left ">We turn bold ideas into smart digital experiences.</h2>
-
-          <div className=" w-full bg-primary-foreground sm:p-10 p-4 duration-300  rounded-xl will-change-transform">
-            <div className="grid lg:grid-cols-3 lg:gap-8 gap-16 mx-auto duration-300">
-              {serviceData.map((feature) => (
-                // desktop cards
-                <div key={feature.title} className="flex flex-col lg:gap-6 gap-4 rounded-xl p-4  hover:bg-[#073d25] hover:scale-105 transition-all duration-300   cursor-pointer">
-                  <feature.icon className="lg:size-8 size-6 text-background " />
-                  <div className="flex flex-col gap-2">
-                    <span className="font-bold text-background  text-2xl">{feature.title}</span>
-                    <p className="mt-1 text-background/80  text-base"> {feature.description} </p>
-                  </div>
-
-                  <div className="flex gap-2 items-center">
-                    <p className=" text-background text-base font-bold"> Mehr Infos </p>
-                    <RiArrowRightUpLine className="size-5 text-background" />
-                  </div>
-                </div>
-              ))}
+      {/* Desktop Section */}
+      <section ref={targetRef} className={cn("w-full  duration-300 mx-auto flex-col !min-h-fit sm:h-[1600px] hidden lg:flex mt-32 py-32 ", className)}>
+        <div ref={cardRef} className="w-full h-full mx-auto bg-primary-foreground py-32">
+          <div className="flex flex-col gap-2 sticky top-[15svh] max-w-7xl mx-auto w-full">
+            <div className="items-center gap-2 h-fit flex max-w-7xl mx-auto w-full">
+              <hr className="w-8 border-background" />
+              <h2 className="sm:text-lg text-base font-medium text-background">Unsere Services.</h2>
             </div>
-          </div>
-        </div>
-      </section> */}
+            <h2 className="sm:text-4xl text-4xl font-bold text-pretty mb-8 text-center lg:text-left text-background">We turn bold ideas into smart digital experiences.</h2>
 
-      <section ref={targetRef} className={cn("w-full max-w-7xl duration-300 mx-auto flex-col !min-h-fit sm:h-[1500px] hidden lg:flex mt-32 ", className)}>
-        <div ref={cardRef} className="flex flex-col gap-2 sticky top-[10%]">
-          <div className=" items-center gap-2 h-fit flex max-w-7xl mx-auto w-full">
-            <hr className="w-8  border-primary" />
-            <h2 className="sm:text-lg text-base font-medium ">Unsere Services.</h2>
-          </div>
-          <h2 className="sm:text-4xl text-4xl font-bold text-pretty mb-8 text-center lg:text-left ">We turn bold ideas into smart digital experiences.</h2>
+            <div className="w-full duration-300 rounded-xl will-change-transform">
+              <div className="grid lg:grid-cols-3 lg:gap-8 gap-8 mx-auto duration-300">
+                {serviceData.map((feature) => (
+                  // desktop cards
+                  <div key={feature.title} className="flex flex-col lg:gap-6 gap-4 rounded-xl p-8 hover:bg-background/10 hover:scale-105 cursor-pointer transition-all duration-300">
+                    <feature.icon className="lg:size-8 size-6 text-background" />
+                    <div className="flex flex-col gap-2">
+                      <span className="font-bold text-2xl text-background">{feature.title}</span>
+                      <p className="mt-1 text-base text-background">{feature.description}</p>
+                    </div>
 
-          <div className=" w-full  duration-300  rounded-xl will-change-transform">
-            <div className="grid lg:grid-cols-3 lg:gap-8 gap-16 mx-auto duration-300">
-              {serviceData.map((feature) => (
-                // desktop cards
-                <div key={feature.title} className="flex flex-col lg:gap-6 gap-4 rounded-xl p-4  hover:bg-[#073d25]/20 hover:scale-105 transition-all duration-300   cursor-pointer">
-                  <feature.icon className="lg:size-8 size-6  " />
-                  <div className="flex flex-col gap-2">
-                    <span className="font-bold  text-2xl">{feature.title}</span>
-                    <p className="mt-1  text-base"> {feature.description} </p>
+                    <div className="flex gap-2 items-center">
+                      <p className="text-base font-bold text-background">Mehr Infos</p>
+                      <RiArrowRightUpLine className="size-5 text-background" />
+                    </div>
                   </div>
-
-                  <div className="flex gap-2 items-center">
-                    <p className="  text-base font-bold"> Mehr Infos </p>
-                    <RiArrowRightUpLine className="size-5 " />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={cn("w-full duration-300 mx-auto  flex-col !min-h-fit justify-center sm:h-[1500px] bg-primary-foreground py-24 lg:hidden", className)}>
+      {/* Mobile Section */}
+      <section className={cn("w-full duration-300 mx-auto  flex-col !min-h-fit justify-center bg-primary-foreground py-24 lg:hidden", className)}>
         <div className="sticky top-[10%] w-full sm:p-10  duration-300  rounded-xl will-change-transform">
           <div className="sticky top-24">
             <div className=" items-center gap-2 h-fit flex ">
@@ -161,7 +135,7 @@ const FeaturesPage2 = ({ className }: { className?: string }) => {
                 description={service.description}
                 badges={service.badges}
                 variant="default"
-                className="sticky border-2 border-green-900 h-[60svh]"
+                className="sticky border-2  h-[60svh]"
                 style={{ top: `${250 + index * 12}px` }}
               />
             ))}

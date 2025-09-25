@@ -4,31 +4,32 @@ import { Hero2 } from "@/components/ui/Hero2";
 
 import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
-import FeaturesPage from "@/components/features-05/features";
 import Footer from "@/components/ui/Footer";
 import { AboutUs } from "@/components/ui/about-us";
 import LogosMarquee from "@/components/LogosMarquee/logos-marquee";
 import FeaturesPage2 from "@/components/features-05/features2";
+import { SuccessInNumbers } from "@/components/Success-In-Numbers";
+import { OurRecentWorks } from "@/components/Our-Recent-Works";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
       {/* <Hero className="" /> */}
+
       <Hero2 className="" />
       <div className=" h-20 flex items-center justify-center">
         <LogosMarquee className=" w-full" />
       </div>
       {/* space for the navbar */}
       <div className="h-32"></div>
-
       <AboutUs className="px-4 xl:px-0 sm:mb-16 mb-16" />
-
       {/* <FeatureDivider className="mb-16 mt-32 max-w-7xl " /> */}
-
       {/* <FeaturesPage className="px-4 xl:px-0 w-full  " /> */}
       <FeaturesPage2 className="px-4 sm:px-0   " />
+      <SuccessInNumbers className="my-36" />
 
-      <FeatureDivider className="my-64 max-w-6xl" />
+      <OurRecentWorks className="" />
+
       <div className="px-4 xl:px-0">
         <Map />
       </div>

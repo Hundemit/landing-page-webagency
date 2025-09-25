@@ -1,12 +1,7 @@
-import { RiArrowRightUpLine } from "@remixicon/react";
 import { FadeDiv, FadeSpan } from "@/components/Fade";
 
-import GameOfLife from "./HeroBackground";
 import { cn } from "@/lib/utils";
-import LogosMarquee from "../LogosMarquee/logos-marquee";
-import { Sparkles } from "lucide-react";
 import { LinkButton } from "./LinkButton";
-import Image from "next/image";
 
 export function Hero2({ className }: { className?: string }) {
   return (

@@ -27,7 +27,7 @@ const ServiceCard = ({ icon: Icon, title, description, badges, buttonText = "Meh
   const currentVariant = variantStyles[variant];
 
   return (
-    <Card className={cn(" rounded-2xl overflow-hidden shadow-none sm:p-8 p-6  ", currentVariant.card, className)} style={style}>
+    <Card className={cn(" rounded-2xl border-green-900 overflow-hidden shadow-none sm:p-8 p-6  ", currentVariant.card, className)} style={style}>
       <CardContent className="p-0 flex flex-col h-full sm:gap-4 gap-2">
         <div className="mb-4">
           {/* <Icon className="size-12 text-white mb-4" /> */}
