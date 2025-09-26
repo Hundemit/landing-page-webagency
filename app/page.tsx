@@ -30,7 +30,7 @@ export default function Home() {
 
       <OurRecentWorks className="" />
 
-      <div className="px-4 xl:px-0">
+      <div className="px-4 xl:px-0 py-16">
         <Map />
       </div>
       <FeatureDivider className="my-64 max-w-6xl" />

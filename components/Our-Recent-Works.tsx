@@ -113,14 +113,14 @@ export function OurRecentWorks({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={cn(" bg-primary-foreground min-h-screen flex mt-18", className)}>
+    <section className={cn(" flex p-4  justify-center mt-18 mx-auto gap-4 h-[3500px] w-full", className)}>
       {/* In diesem Div soll sich das Bild immer ändern */}
-      <div className="w-1/2 h-screen sticky top-0 ">
-        <div ref={imageRef} className="w-full h-full   overflow-hidden ">
-          <img src={currentImage} alt="Case Study Visual" className="object-cover  h-full w-full transition-opacity " />
+      <div className="w-full max-w-4xl h-[80svh] sticky left-0 top-24 ">
+        <div ref={imageRef} className="w-full h-full">
+          <img src={currentImage} alt="Case Study Visual" className="object-cover h-full w-full rounded-2xl transition-opacity " />
         </div>
       </div>
-      <div className="flex w-1/2 flex-col items-center gap-46 p-4 py-36 ">
+      <div className="flex max-w-4xl w-full flex-col items-center gap-46 rounded-2xl min-w-2xl">
         {caseStudiesData.map((caseStudy, idx) => (
           <OurRecentWorksCard
             key={idx}
@@ -128,10 +128,13 @@ export function OurRecentWorks({ className }: { className?: string }) {
             ref={(el) => {
               cardsRef.current[idx] = el;
             }}
+            style={{
+              top: `${96 + idx * 24}px`,
+            }}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -143,10 +146,11 @@ const OurRecentWorksCard = React.forwardRef<
     impactLabel: string;
     impactStats: { value: string; description: string }[];
     moreDetailsText: string;
+    style?: React.CSSProperties;
   }
->(({ caseStudyTitle, caseStudyDescription, impactLabel, impactStats, moreDetailsText }, ref) => {
+>(({ caseStudyTitle, caseStudyDescription, impactLabel, impactStats, moreDetailsText, style }, ref) => {
   return (
-    <div ref={ref} className="w-full h-full min-h-[100svh] justify-center bg-primary-foreground rounded-2xl p-10 flex flex-col gap-6">
+    <div ref={ref} style={style} className="w-full min-h-[80svh] border-2 border-white bg-primary-foreground sticky justify-center rounded-2xl p-10 flex flex-col gap-6">
       <div className="flex items-center gap-2 mb-2">
         <hr className="w-8 border-white/30" />
         <span className="text-white/80 text-sm font-medium">Case Study</span>
