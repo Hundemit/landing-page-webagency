@@ -10,11 +10,15 @@ import LogosMarquee from "@/components/LogosMarquee/logos-marquee";
 import FeaturesPage2 from "@/components/features-05/features2";
 import { SuccessInNumbers } from "@/components/Success-In-Numbers";
 import { OurRecentWorks } from "@/components/Our-Recent-Works";
+import PartnershipHero from "@/components/ui/PartnershipHero";
+import Testimonials from "@/components/ui/Testimonials";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
       {/* <Hero className="" /> */}
+
+      <Testimonials className="" />
 
       <Hero2 className="" />
       <div className=" h-20 flex items-center justify-center">
@@ -29,6 +33,8 @@ export default function Home() {
       <SuccessInNumbers className="my-36" />
 
       <OurRecentWorks className="" />
+
+      <PartnershipHero className="" />
 
       <div className="px-4 xl:px-0 py-16">
         <Map />
