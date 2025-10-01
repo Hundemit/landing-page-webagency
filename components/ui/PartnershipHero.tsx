@@ -46,7 +46,7 @@ const PartnershipHero = ({ className }: { className?: string }) => {
         </div>
 
         {/* Right Section - Logo Marquee */}
-        <div className="flex-1 lg:max-w-2xl">
+        <div className="flex-1  w-full lg:max-w-2xl">
           <div className="relative flex h-[400px] w-full flex-row items-center justify-center overflow-hidden">
             <Marquee pauseOnHover vertical className="[--duration:20s] w-full">
               {firstRow.map((logo, index) => (

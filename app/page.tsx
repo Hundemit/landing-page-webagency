@@ -23,15 +23,11 @@ export default function Home() {
       <div className=" h-20 flex items-center justify-center">
         <LogosMarquee className=" w-full" />
       </div>
-      {/* space for the navbar */}
       <div className="h-32"></div>
       <AboutUs className="px-4 xl:px-0 sm:mb-16 mb-16" />
-      {/* <FeatureDivider className="mb-16 mt-32 max-w-7xl " /> */}
-      {/* <FeaturesPage className="px-4 xl:px-0 w-full  " /> */}
       <FeaturesPage2 className="px-4 sm:px-0   " />
       <SuccessInNumbers className="my-36" />
 
-      <OurRecentWorks className="" />
       <OurRecentWorks2 className="" />
 
       <PartnershipHero className="" />

@@ -46,7 +46,7 @@ const testimonials = [
 // Testimonial Card Component
 const TestimonialCard = ({ testimonial, className }: { testimonial: (typeof testimonials)[0]; className?: string }) => {
   return (
-    <div className={cn("flex h-full lg:min-h-96 flex-col lg:flex-row items-start  justify-between gap-4 p-4  rounded-xl bg-[#F0ECDD] duration-300", className)}>
+    <div className={cn("flex h-full lg:min-h-96 flex-col lg:flex-row items-start  justify-between gap-4 p-4 md:p-8  rounded-xl bg-[#F0ECDD] duration-300", className)}>
       {/* Quote Section */}
       <div className="w-full h-full  relative  flex flex-col justify-between gap-4 lg:gap-0">
         {/* Large Quote Mark */}
@@ -127,20 +127,6 @@ const Testimonials = ({ className }: { className?: string }) => {
 
       {/* Carousel */}
       <div className="relative  mx-auto duration-300">
-        {/* <Carousel setApi={setApi} className="w-full">
-          <CarouselContent>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="basis-3/5">
-                <Card className="border-0 shadow-none bg-transparent max-w-7xl mx-auto">
-                  <CardContent className="p-0">
-                    <TestimonialCard testimonial={testimonial} />
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel> */}
-
         <Carousel setApi={setApi} className="w-full max-w-7xl mx-auto" opts={{ loop: true }}>
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
