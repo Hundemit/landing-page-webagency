@@ -5,8 +5,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
+// Types
+interface Testimonial {
+  id: number;
+  quote: string;
+  author: string;
+  role: string;
+  image: string;
+}
+
 // Testimonial data
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: "Working with Webloris was a game-changer. Their team transformed our outdated website into a sleek, user-friendly platform that truly represents our brand.",
@@ -45,18 +54,18 @@ const testimonials = [
 ];
 
 // Testimonial Card Component
-const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[0] }) => {
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div className="flex flex-col lg:flex-row items-start gap-8 p-8">
       {/* Quote Section */}
       <div className="flex-1 relative">
         <div className="relative bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
           {/* Large Quote Mark */}
-          <div className="text-7xl font-bold text-gray-200 absolute -top-4 -left-4 leading-none">"</div>
+          <div className="text-7xl font-bold text-gray-200 absolute -top-4 -left-4 leading-none">&ldquo;</div>
 
           {/* Quote Text */}
           <div className="relative z-10 pt-6">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6 pl-4">{testimonial.quote}</p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 pl-4">&ldquo;{testimonial.quote}&rdquo;</p>
 
             {/* Author Info */}
             <div className="space-y-1 pl-4">
@@ -82,7 +91,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: (typeof testimonials)[0
   );
 };
 
-const Testimonials = ({ className }: { className?: string }) => {
+interface TestimonialsProps {
+  className?: string;
+}
+
+const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
@@ -95,9 +108,15 @@ const Testimonials = ({ className }: { className?: string }) => {
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
+    const handleSelect = () => {
       setCurrent(api.selectedScrollSnap() + 1);
-    });
+    };
+
+    api.on("select", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+    };
   }, [api]);
 
   return (
@@ -111,12 +130,6 @@ const Testimonials = ({ className }: { className?: string }) => {
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">What Our Clients Say</h1>
-
-          {/* Navigation Arrows */}
-          <div className="flex gap-2">
-            <CarouselPrevious className="static translate-x-0 translate-y-0 w-10 h-10 bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600" />
-            <CarouselNext className="static translate-x-0 translate-y-0 w-10 h-10 bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600" />
-          </div>
         </div>
       </div>
 
@@ -134,6 +147,12 @@ const Testimonials = ({ className }: { className?: string }) => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          
+          {/* Navigation Arrows */}
+          <div className="flex gap-2 mt-4 justify-center">
+            <CarouselPrevious className="static translate-x-0 translate-y-0 w-10 h-10 bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600" />
+            <CarouselNext className="static translate-x-0 translate-y-0 w-10 h-10 bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600" />
+          </div>
         </Carousel>
 
         {/* Dots Indicator */}
@@ -142,7 +161,13 @@ const Testimonials = ({ className }: { className?: string }) => {
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={cn("h-3 w-3 rounded-full border-2 transition-colors", current === index + 1 ? "border-primary bg-primary" : "border-gray-300 bg-transparent hover:border-gray-400")}
+              className={cn(
+                "h-3 w-3 rounded-full border-2 transition-colors",
+                current === index + 1 
+                  ? "border-primary bg-primary" 
+                  : "border-gray-300 bg-transparent hover:border-gray-400"
+              )}
+              aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
