@@ -9,15 +9,18 @@ import { AboutUs } from "@/components/ui/about-us";
 import LogosMarquee from "@/components/LogosMarquee/logos-marquee";
 import FeaturesPage2 from "@/components/features-05/features2";
 import { SuccessInNumbers } from "@/components/Success-In-Numbers";
-import { OurRecentWorks } from "@/components/Our-Recent-Works";
 import PartnershipHero from "@/components/ui/PartnershipHero";
 import Testimonials from "@/components/ui/Testimonials";
 import { OurRecentWorks2 } from "@/components/Our-Recent-Works2";
+import Faq from "@/components/ui/Faq";
+import { BlogSection } from "@/components/ui/BlogSection";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
       {/* <Hero className="" /> */}
+
+      <BlogSection className="" />
 
       <Hero2 className="" />
       <div className=" h-20 flex items-center justify-center">
@@ -33,6 +36,8 @@ export default function Home() {
       <PartnershipHero className="" />
 
       <Testimonials className="" />
+
+      <Faq className="" />
 
       <div className="px-4 xl:px-0 py-16">
         <Map />

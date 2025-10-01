@@ -58,12 +58,12 @@ const TestimonialCard = ({ testimonial, className }: { testimonial: (typeof test
         {/* Quote Text */}
         <div className="relative z-10 flex justify-between  duration-300">
           {/* Author Info */}
-          <div className="space-y-1 ">
+          <div className="flex flex-col justify-end ">
             <p className="font-semibold text-black text-base">{testimonial.author}</p>
             <p className="text-sm text-black font-normal">{testimonial.role}</p>
           </div>
           {/* mini imiage */}
-          <div className=" min-w-12 h-12  bg-gray-500 rounded-xl lg:hidden"></div>
+          <div className="min-w-16 sm:min-w-24 aspect-square bg-gray-500 duration-300 rounded-xl lg:hidden"></div>
         </div>
       </div>
 
@@ -126,15 +126,15 @@ const Testimonials = ({ className }: { className?: string }) => {
       </div>
 
       {/* Carousel */}
-      <div className="relative  mx-auto duration-300">
-        <Carousel setApi={setApi} className="w-full max-w-7xl mx-auto" opts={{ loop: true }}>
+      <div className="relative mx-auto duration-300 ">
+        <Carousel setApi={setApi} className="w-full  mx-auto" opts={{ loop: true }}>
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="basis-11/12">
+              <CarouselItem key={index} className=" max-w-7xl ">
                 <TestimonialCard
                   testimonial={testimonial}
-                  className={cn("duration-1000", {
-                    "opacity-50": index !== current - 1,
+                  className={cn("duration-500 mx-4", {
+                    "opacity-40 scale-95": index !== current - 1,
                   })}
                 />
               </CarouselItem>
