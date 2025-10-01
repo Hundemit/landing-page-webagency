@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LinkButton } from "./LinkButton";
 
@@ -16,7 +15,7 @@ interface ServiceCardProps {
   style?: React.CSSProperties;
 }
 
-const ServiceCard = ({ icon: Icon, title, description, badges, buttonText = "Mehr Infos", className, variant = "default", style }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, badges, buttonText = "Mehr Infos", className, variant = "default", style }: ServiceCardProps) => {
   const variantStyles = {
     default: {
       card: "bg-[#073d25]",

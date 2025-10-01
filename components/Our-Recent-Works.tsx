@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { LinkButton } from "./ui/LinkButton";
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

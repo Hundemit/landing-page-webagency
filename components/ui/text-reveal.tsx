@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, MotionValue, useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { motion, MotionValue, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { ComponentPropsWithoutRef, FC, ReactNode, useRef } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,4 +1,4 @@
-import { FadeDiv, FadeSpan } from "@/components/Fade";
+import { FadeSpan } from "@/components/Fade";
 
 import { cn } from "@/lib/utils";
 import { LinkButton } from "./LinkButton";
