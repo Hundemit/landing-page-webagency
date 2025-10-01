@@ -1,0 +1,188 @@
+# Cursor Rules für Landing Page Web Agency
+
+## Projekt-Übersicht
+
+Dies ist eine moderne Landing Page für eine Web-Agentur, entwickelt mit Next.js 15, React 19, TypeScript und Tailwind CSS 4.
+
+## Tech Stack
+
+- **Framework**: Next.js 15.5.2 mit App Router
+- **Frontend**: React 19.1.0, TypeScript 5
+- **Styling**: Tailwind CSS 4, tw-animate-css
+- **UI Components**: Radix UI, Lucide React, Remix Icons
+- **Animation**: GSAP 3.13.0, Motion 12.23.20
+- **Fonts**: Geist Sans & Geist Mono
+- **Build**: Turbopack
+
+## Projektstruktur
+
+```
+app/                    # Next.js App Router
+├── page.tsx           # Homepage
+├── layout.tsx         # Root Layout
+├── globals.css        # Global Styles
+├── theme.css          # Theme Configuration
+├── stylesheet.css     # Custom Styles
+└── [routes]/          # Weitere Seiten (agentur, jobs, kontakt, etc.)
+
+components/             # React Components
+├── ui/               # UI Components (Hero2, Footer, Navbar, etc.)
+├── LogosMarquee/     # Logo Marquee Component
+├── features-05/      # Features Section
+└── [other components]
+
+lib/                   # Utilities
+├── utils.ts          # Utility Functions (cn, capitalize, groupBy)
+├── useMobile.ts      # Mobile Detection Hook
+└── useScroll.ts      # Scroll Detection Hook
+
+public/               # Static Assets
+├── fonts/           # Custom Fonts (BlinkMacSystemFont)
+└── images/          # Images & Illustrations
+```
+
+## Coding Standards
+
+### TypeScript
+
+- Verwende strikte TypeScript-Konfiguration
+- Definiere explizite Typen für Props und State
+- Nutze `interface` für Objekt-Typen
+- Verwende `type` für Union-Types und Utility-Types
+
+### React/Next.js
+
+- Verwende Functional Components mit Hooks
+- Nutze `export default` für Hauptkomponenten
+- Implementiere `aria-label` für Accessibility
+- Verwende Next.js Image-Komponente für optimierte Bilder
+- Nutze App Router Patterns (Server Components wo möglich)
+
+### Styling
+
+- Verwende Tailwind CSS Klassen
+- Nutze `cn()` Utility für conditional classes
+- Implementiere responsive Design (sm:, md:, lg:, xl:)
+- Verwende CSS Custom Properties für Theme-Variablen
+- Nutze `duration-*` Klassen für Transitions
+
+### Component Patterns
+
+```tsx
+// Component Props Interface
+interface ComponentProps {
+  className?: string;
+  children?: React.ReactNode;
+  // Weitere spezifische Props
+}
+
+// Component mit cn() Utility
+export function Component({ className, ...props }: ComponentProps) {
+  return <div className={cn("base-classes", className)}>{/* Component Content */}</div>;
+}
+```
+
+## Wichtige Utilities
+
+### `cn()` Function
+
+```tsx
+import { cn } from "@/lib/utils";
+// Kombiniert clsx und tailwind-merge für conditional classes
+```
+
+### Responsive Design
+
+- Mobile-first Approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Verwende `min-h-[100svh]` für Viewport-Höhe
+
+### Animation & Transitions
+
+- Nutze `duration-*` Klassen für CSS Transitions
+- Implementiere GSAP für komplexe Animationen
+- Verwende FadeSpan Component für Text-Animationen
+
+## Design System
+
+### Farben
+
+- Primary: `bg-primary`, `text-primary`
+- Background: `bg-background`, `text-foreground`
+- Dark Mode: `.dark` Klasse für Theme-Switching
+
+### Typography
+
+- Headings: `text-4xl sm:text-5xl md:text-6xl font-bold`
+- Body: `text-base sm:text-base md:text-lg`
+- Balance: `text-balance` für bessere Lesbarkeit
+
+### Spacing
+
+- Container: `max-w-7xl mx-auto`
+- Padding: `px-4 xl:px-0` für responsive Padding
+- Margins: `my-36`, `mb-16`, etc.
+
+## Performance
+
+- Nutze Next.js Image Optimization
+- Implementiere Lazy Loading für schwere Komponenten
+- Verwende Turbopack für schnelle Builds
+- Optimiere Bundle Size durch Tree Shaking
+
+## Accessibility
+
+- Implementiere `aria-label` für interaktive Elemente
+- Verwende semantische HTML-Elemente
+- Stelle ausreichenden Farbkontrast sicher
+- Implementiere Keyboard Navigation
+
+## Best Practices
+
+1. **Component Organization**: Gruppiere verwandte Komponenten
+2. **Props Interface**: Definiere klare TypeScript-Interfaces
+3. **Responsive Design**: Mobile-first mit Tailwind Breakpoints
+4. **Performance**: Nutze Next.js Optimierungen
+5. **Accessibility**: Implementiere ARIA-Labels und semantisches HTML
+6. **Code Quality**: Verwende ESLint und TypeScript strict mode
+
+## Häufige Patterns
+
+### Hero Section
+
+```tsx
+<section aria-label="hero" className={cn("relative flex flex-col items-center min-h-[617px] sm:min-h-[672px] h-[100svh] pt-22 md:pt-32 duration-300", className)}>
+```
+
+### Container Layout
+
+```tsx
+<div className="max-w-7xl mx-auto px-4 xl:px-0">
+```
+
+### Responsive Text
+
+```tsx
+<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold duration-500">
+```
+
+### Button Component
+
+```tsx
+<LinkButton size="default" variant="light" className="hidden sm:flex" text="Contact Us" href="#" />
+```
+
+## Entwicklung
+
+- **Dev Server**: `npm run dev`
+- **Build**: `npm run build` (mit Turbopack)
+- **Linting**: `npm run lint`
+- **Start**: `npm start`
+
+## Wichtige Dependencies
+
+- `clsx` + `tailwind-merge` für conditional classes
+- `@radix-ui/*` für accessible UI components
+- `gsap` für Animationen
+- `embla-carousel-react` für Carousels
+- `next-themes` für Theme-Switching
