@@ -63,9 +63,6 @@ const PartnershipHero = ({ className }: { className?: string }) => {
           </div>
         </div>
       </div>
-
-      {/* Bottom divider line */}
-      <div className="w-full h-px bg-gray-200 mt-16"></div>
     </section>
   );
 };

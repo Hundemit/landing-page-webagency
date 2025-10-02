@@ -1,4 +1,4 @@
-import { siteConfig } from "@/app/siteConfig";
+import { config } from "@/components/config";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -30,5 +30,5 @@ export function groupBy<T, K extends keyof T>(
 export function absoluteUrl(path: string) {
   return process.env.NODE_ENV === "development"
     ? `http://localhost:3000${path}`
-    : `${siteConfig.url}${path}`;
+    : `https://${config.appUrl}${path}`;
 }

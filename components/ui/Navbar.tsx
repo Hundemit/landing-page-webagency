@@ -8,15 +8,39 @@ import { RiCloseFill, RiMenuFill } from "@remixicon/react";
 import Link from "next/link";
 import React from "react";
 import { DatabaseLogo } from "@/public/DatabaseLogo";
+import { gsap } from "gsap";
 
 export function NavBar() {
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(15);
+  const navbarRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    if (!navbarRef.current) return;
+
+    // Initial state: navbar off-screen at the top and invisible
+    gsap.set(navbarRef.current, {
+      y: -150,
+      opacity: 0,
+      visibility: "hidden",
+    });
+
+    // Animate navbar sliding down from top with bouncy effect
+    gsap.to(navbarRef.current, {
+      y: 0,
+      opacity: 1,
+      visibility: "visible",
+      duration: 0.4,
+      ease: "back.out(2.2)",
+      delay: 0.1,
+    });
+  }, []);
 
   return (
     <header
+      ref={navbarRef}
       className={cn(
-        "fixed inset-x-3 top-0   z-50 mx-auto backdrop-blur-sm flex max-w-7xl transform-gpu animate-slide-down-fade justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
+        "fixed inset-x-3 top-0 z-50 mx-auto backdrop-blur-sm flex max-w-7xl transform-gpu justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform opacity-0",
         open === true ? "h-52" : "h-16",
         scrolled || open === true ? " max-w-3xl border-gray-100/10 bg-white/20 shadow-md shadow-gray-200 dark:border-white/15 dark:bg-black/70  top-4" : "bg-white/0 dark:bg-gray-950/0"
       )}>

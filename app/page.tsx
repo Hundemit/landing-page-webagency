@@ -1,6 +1,6 @@
 import { CallToAction } from "@/components/ui/CallToAction";
 import FeatureDivider from "@/components/ui/FeatureDivider";
-import { Hero2 } from "@/components/ui/Hero2";
+import { Hero } from "@/components/ui/Hero2";
 
 import { Map } from "@/components/ui/Map/Map";
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics";
@@ -14,44 +14,37 @@ import Testimonials from "@/components/ui/Testimonials";
 import { OurRecentWorks2 } from "@/components/Our-Recent-Works2";
 import Faq from "@/components/ui/Faq";
 import { BlogSection } from "@/components/ui/BlogSection";
+import { ContactUs } from "@/components/ui/ContactUs";
 
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col">
       {/* <Hero className="" /> */}
 
-      <BlogSection className="" />
-
-      <Hero2 className="" />
-      <div className=" h-20 flex items-center justify-center">
-        <LogosMarquee className=" w-full" />
-      </div>
+      <Hero className="" />
+      <LogosMarquee className="" />
       <div className="h-32"></div>
       <AboutUs className="px-4 xl:px-0 sm:mb-16 mb-16" />
       <FeaturesPage2 className="px-4 sm:px-0   " />
-      <SuccessInNumbers className="my-36" />
+      <SuccessInNumbers className="md:my-36 my-16" />
 
       <OurRecentWorks2 className="" />
 
-      <PartnershipHero className="" />
+      <PartnershipHero className="md:my-36 my-16" />
 
-      <Testimonials className="" />
+      <Testimonials className="md:mb-36 mb-16" />
 
-      <Faq className="" />
+      <Faq className="md:my-36 my-16 " />
 
-      <div className="px-4 xl:px-0 py-16">
-        <Map />
-      </div>
-      <FeatureDivider className="my-64 max-w-6xl" />
-      <div className="mt-12 mb-40 px-4 xl:px-0">
-        <SolarAnalytics />
-      </div>
-      <div className="mt-10 mb-40 px-4 xl:px-0">
-        <CallToAction />
-      </div>
-      <div className="mt-10 mb-40 px-4 xl:px-0">
-        <Footer />
-      </div>
+      {/* <Map /> */}
+      {/* <SolarAnalytics /> */}
+      {/* <CallToAction /> */}
+
+      <ContactUs className="md:my-36 my-16 " />
+
+      <BlogSection className="md:my-16 my-16" />
+
+      <Footer className="" />
     </main>
   );
 }

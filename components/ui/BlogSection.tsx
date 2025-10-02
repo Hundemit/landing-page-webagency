@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
 
 export function BlogSection({ className }: BlogSectionProps) {
   return (
-    <section className={cn("py-16 md:py-24 bg-[#faf9f7]", className)}>
+    <section className={cn("py-16 md:py-24 ", className)}>
       <div className="max-w-7xl mx-auto px-4 xl:px-0">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center md:justify-between mb-12">

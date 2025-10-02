@@ -28,7 +28,7 @@ const faq = [
 
 function Faq({ className }: { className?: string }) {
   return (
-    <section className={cn("min-h-screen flex items-center justify-center px-6 py-12", className)}>
+    <section className={cn("flex items-center justify-center px-6 py-12", className)}>
       <div className="w-full max-w-7xl mx-auto lg:flex-row flex-col flex justify-between duration-300">
         {/* Left Side */}
         <div className="items-center gap-2 h-fit  flex">
